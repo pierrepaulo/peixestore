@@ -1,0 +1,350 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #ffffff, #999999, #000000);
+  color: #000;
+}
+
+header {
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  min-height: 80vh;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.subtitulo {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+  color: #555;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-buttons a {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.hero-images {
+  position: relative;
+  width: 360px;
+  height: 480px;
+  margin-left: auto;
+  margin-right: 80px;
+  transform: translateY(30px);
+}
+
+.hero-images img {
+  height: 380px;
+  border-radius: 12px;
+  transform: rotate(-5deg);
+}
+
+.camisa {
+  position: absolute;
+  height: 420px;
+  border-radius: 12px;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    left 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.camisa-1 {
+  left: -80px;
+  top: 20px;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+.camisa-2 {
+  left: 0;
+  top: 0;
+  transform: rotate(0deg);
+  z-index: 2;
+}
+.camisa-3 {
+  left: 80px;
+  top: 20px;
+  transform: rotate(15deg);
+  z-index: 1;
+}
+
+.camisa:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 5;
+}
+
+.hero-images:hover .camisa-1 {
+  left: -180px;
+  transform: rotate(-18deg);
+}
+
+.hero-images:hover .camisa-2 {
+  left: 0;
+  transform: rotate(0deg) scale(1.05);
+  z-index: 3;
+}
+
+.hero-images:hover .camisa-3 {
+  left: 180px;
+  transform: rotate(18deg);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    padding: 3rem 2rem;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-images {
+    transform: none;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 360px;
+  }
+
+  .camisa {
+    position: relative;
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    display: block;
+    margin-bottom: 1rem;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .hero-images:hover .camisa-1,
+  .hero-images:hover .camisa-2,
+  .hero-images:hover .camisa-3 {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+.produtos {
+  margin-bottom: 2rem;
+}
+
+.produtos h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(to right, #000, #888);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.card-produto {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.card-produto img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card-produto h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  color: #f3f3f3;
+}
+
+.card-produto p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flip-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 340px;
+  position: relative;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.frente,
+.verso {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.frente img,
+.verso img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.verso {
+  transform: rotateY(180deg);
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}

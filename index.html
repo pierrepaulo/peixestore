@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeixeStore</title>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1 class="logo">PeixeStore</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Camisas</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero container reveal">
+      <div class="hero-text">
+        <p class="subtitulo">peixestore: a camisa ideal, pra você.</p>
+        <h1>
+          Esqueça o resto.<br />
+          <span>Use o manto sagrado.</span>
+        </h1>
+        <p>
+          Do Rei Pelé ao Menino da Vila. Na PeixeStore, você encontra as camisas
+          mais históricas e autênticas do Santos Futebol Clube. Honre a tradição
+          com estilo.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Ver Camisas</a>
+          <a href="#" class="btn-secondary">Conhecer História</a>
+        </div>
+      </div>
+
+      <div class="hero-images">
+        <img
+          src="assets/camisasantosazul2025.png"
+          alt="Camisa titular"
+          class="camisa camisa-1"
+        />
+        <img
+          src="assets/camisasantosbranca2025.png"
+          alt="Camisa retrô"
+          class="camisa camisa-2"
+        />
+        <img
+          src="assets/camisasantoslistrada2025.png"
+          alt="Camisa reserva"
+          class="camisa camisa-3"
+        />
+      </div>
+    </section>
+
+    <section class="produtos container reveal">
+      <h2>Camisas disponíveis</h2>
+      <div id="produtos-container" class="grid-produtos"></div>
+    </section>
+
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
